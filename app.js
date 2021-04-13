@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.send('<h1>Library System</h1>')
 })
 
-app.post('/author-management', authorRouter)
+// app.post('/author-management', authorRouter)
 
 app.use('/author-management', authorRouter)
 
