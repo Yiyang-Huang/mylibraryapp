@@ -25,8 +25,22 @@ const getOneAuthor = async (req, res) => {
         return res.send("Database query failed")
     }
 }
+
+const addAuthor = (req, res) => {
+    const newAuthor = new Author({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        authorId: req.body.authorId
+    })
+
+    newAuthor.save( (err, result) => {
+        if (err) res.send(err)
+        return res.send(result)
+    })
+}
 // remember to export the functions
 module.exports = {
- getAllAuthors,
- getOneAuthor
+    getAllAuthors,
+    getOneAuthor,
+    addAuthor
 }

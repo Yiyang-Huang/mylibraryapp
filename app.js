@@ -1,12 +1,8 @@
 const express = require('express')
 require('./models');
-// const bodyParser = require('body-parser')
-const app = express();
-
-// app.use(express.json());
-// app.use(express.urlencoded({
-//   extended: true
-// }));
+const bodyParser = require('body-parser')
+const app = express()
+app.use(bodyParser.json())  
 
 const authorRouter = require('./routes/authorRouter')
 
